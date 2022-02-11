@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/registretion.css">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent" >
+        <!-- Tabs Titles -->
+        <h2 class="active">UPDATE</h2>
+        <form th:action="@{/updateProduct}" th:object="${updateProduct}" method="post" enctype="multipart/form-data">
+            <input type="text" id="login" class="fadeIn second" name="Name" placeholder="Name" th:field="*{name}" >
+            <input type="text" id="surename" class="fadeIn third" name="Price" placeholder="Price" th:field="*{price}">
+            <input type="text" id="email" class="fadeIn third" name="Description" placeholder="Description"  th:field="*{description}">
+            <input type="password" id="password" class="fadeIn third" name="Rate" placeholder="Count" th:field="*{rate}">
+            <input type="file" class="email-bt" placeholder="picture"  multiple name="picture">
+            <span>
+            <input name="id" th:text="${updateProduct.getId()}" th:field="*{id}">
+            </span>
+            <input type="submit" class="fadeIn fourth" value="UPDATE">
+        </form>
+    </div>
+</div>
+</body>
+</html>

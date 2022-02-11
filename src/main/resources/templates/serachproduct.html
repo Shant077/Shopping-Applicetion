@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Pullshoes</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif"/>
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+          media="screen">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
+<body class="main-layout" style="background-color: #56baed">
+<!-- new collection section start -->
+<div class="about_main layout_padding">
+    <div class="collection_section">
+    </div>
+    <div class="collectipn_section_3 layout_padding">
+        <div class="container">
+            <div class="racing_shoes">
+                <h1>COMMENT</h1>
+                <!--                <div th:each="p:${admin}">-->
+                <table class="table table-bordered">
+                    <div>
+                        <form th:action="@{/search}" method="post" >
+                            <input type="text" id="email" class="fadeIn second" name="searchName" placeholder="Comment">
+                            <input type="submit" class="fadeIn fourth" value="REGISTRETION">
+                        </form>
+                        <thead>
+                        <tr>
+                            <th>PRODUCT</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>COUNT</th>
+                            <th>PRICE</th>
+                            <th>DESCRIPTION</th>
+                        </tr>
+                        </thead>
+                    </div>
+
+                    <div>
+                        <thead>
+                        <tr  th:each="search:${searchList}">
+                            <th> <img th:src="@{/imageProduct/(fileName=${search.getPictureUrl()})}" width="25" height="25"
+                                      alt=""> </th>
+                            <th th:text="${search.getId()}"></th>
+                            <th th:text="${search.getName()}"></th>
+                            <th th:text="${search.getRate()}"></th>
+                            <th th:text="${search.getPrice()}"></th>
+                            <th th:text="${search.getDescription()}"></th>
+                        </tr>
+                        </thead>
+                    </div>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+</script>
+</body>

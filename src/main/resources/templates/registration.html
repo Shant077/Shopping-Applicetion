@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/registretion.css">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Sign Up </h2>
+        <h2 class="inactive underlineHover"><a th:href="@{/}" style="text-weight:bold;color: black">Sign In</a></h2>
+
+        <!-- Login Form -->
+        <form th:action="@{/registration}" th:object="${registration}" method="POST">
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Name" th:field="*{name}">
+            <input type="text" id="surename" class="fadeIn third" name="login" placeholder="Surename"
+                   th:field="*{surName}">
+            <input type="text" id="email" class="fadeIn third" name="login" placeholder="Email" th:field="*{email}">
+            <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password"
+                   th:field="*{password}">
+            <input type="submit" class="fadeIn fourth" value="REGISTRETION">
+        </form>
+    </div>
+</div>
+</body>
+</html>
